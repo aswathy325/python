@@ -1,0 +1,17 @@
+if __name__ == '__main__':
+    students = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        students.append([name, score])
+    
+    # Find the second lowest grade
+    unique_scores = sorted(set([score for name, score in students]))
+    second_lowest = unique_scores[1]
+
+    # Get the names of students with the second lowest grade
+    second_lowest_students = sorted([name for name, score in students if score == second_lowest])
+    
+    for name in second_lowest_students:
+        print(name)
+
